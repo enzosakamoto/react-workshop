@@ -1,25 +1,12 @@
-import { useEffect } from 'react'
-import { useUsers } from '../hooks/use-users'
-import { UserCard } from '../components/user-card'
+import { Navbar } from '../components/navbar'
 
 export function Home() {
-  const { users, fetchUsers } = useUsers()
-
-  useEffect(() => {
-    fetchUsers()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
   return (
-    <main className="flex h-screen w-full flex-col items-center justify-center gap-12">
-      <h1 className="flex flex-col text-4xl font-semibold sm:text-6xl md:text-8xl">
-        Hexagonal Arch
+    <main className="flex h-[100rem] w-full flex-col items-center justify-center gap-12">
+      <Navbar />
+      <h1 className="font-mont text-3xl font-bold sm:text-6xl">
+        React Workshop
       </h1>
-      <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-3">
-        {users.map((user) => (
-          <UserCard key={user.id} user={user} />
-        ))}
-      </div>
     </main>
   )
 }
