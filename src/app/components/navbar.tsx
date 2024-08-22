@@ -56,11 +56,17 @@ export function Navbar() {
         </div>
       </div>
       <div className="flex items-center gap-6 text-xl">
-        <FiGithub />
+        <a
+          href="https://github.com/enzosakamoto/react-workshop"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <FiGithub />
+        </a>
         {theme === 'light' ? (
-          <FaRegMoon onClick={toggleTheme} />
+          <FaRegMoon onClick={toggleTheme} className="cursor-pointer" />
         ) : (
-          <FiSun onClick={toggleTheme} />
+          <FiSun onClick={toggleTheme} className="cursor-pointer" />
         )}
       </div>
       {isMenuOpen && (
@@ -87,7 +93,7 @@ export function Navbar() {
             <div className="flex flex-col justify-center gap-8 text-xl">
               <a
                 href="#"
-                className={`cursor-pointer transition-all delay-0 duration-1000 ${fade ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}
+                className={`cursor-pointer transition-all duration-1000 ${fade ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}
               >
                 Home
               </a>
